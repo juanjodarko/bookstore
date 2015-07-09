@@ -1,0 +1,12 @@
+<h2>
+	Agregar Nueva categoria
+</h2>
+
+<%=form_for @category do |f|%>
+<div class="form-group">
+	<%= f.label :name %><br>
+	<%= f.text_field :name, class: 'form-control' %><br>
+</div>
+<%= f.submit 'Agregar', class:'btn btn-primary' %>
+<%= link_to 'Cancelar', categories_path, class:'btn btn-default' %>
+<%end%>

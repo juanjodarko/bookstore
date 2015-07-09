@@ -1,0 +1,21 @@
+<% if params[:controller] == 'about' %>
+<div class="well">
+	<h3>
+		Ubicaci&oacute;n
+	</h3>
+	<ul>
+		<li>The Bookstore</li>
+		<li>499 Avenida, unidad 3</li>
+		<li>municipio, estado, 01010</li>
+		<li>Telefono: (5)555-555-555</li>
+		<li>Email: soporte@thebookstore.com</li>
+	</ul>
+</div>
+<%end%>
+<% if params[:controller] == 'books' && params[:action] == 'index' || params[:action] == 'show' %>
+<ul class="list-group">
+  <li class="list-group-item">Ruby on rails</li>
+  <li class="list-group-item">PHP</li>
+  <li class="list-group-item">HTML</li>
+</ul>
+<%end%>
