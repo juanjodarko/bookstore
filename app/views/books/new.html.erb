@@ -16,16 +16,24 @@
 	<%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]}, {:include_blank => 'Selecciona uno'},  class:'form-control' %><br>
 </div>
 <div class="form-group">
-	<%= f.label :category %><br>
-	<%= f.select :author_id, Author.all.collect {|x| [x.name, x.id]}, {:include_blank => 'Selecciona uno'},  class:'form-control' %><br>
+	<%= f.label :author %><br>
+	<%= f.select :author_id, Author.all.collect {|x| [x.first_name + ' ' + x.last_name, x.id]}, {:include_blank => 'Selecciona uno'},  class:'form-control' %><br>
 </div>
 <div class="form-group">
-	<%= f.label :category %><br>
+	<%= f.label :publisher %><br>
 	<%= f.select :publisher_id, Publisher.all.collect {|x| [x.name, x.id]}, {:include_blank => 'Selecciona uno'},  class:'form-control' %><br>
 </div>
 <div class="form-group">
 	<%= f.label :format %><br>
 	<%= f.text_field :format, class:'form-control' %><br>
+</div>
+<div class="form-group">
+	<%= f.label :year %><br>
+	<%= f.text_field :year, class:'form-control' %><br>
+</div>
+<div class="form-group">
+	<%= f.label :portada %><br>
+	<%= f.text_field :coverpath, class:'form-control' %><br>
 </div>
 <div class="form-group">
 	<%= f.label :excerpt %><br>

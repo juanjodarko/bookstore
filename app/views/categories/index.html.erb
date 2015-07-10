@@ -1,2 +1,16 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+<h2>
+	Categor&iacute;s
+</h2>
+
+<table class="table table-striped">
+	<tr>
+		<th>Nombre de la categor&iacute;a</th>
+		<th>Acciones</th>
+	</tr>	
+	<% @categories.each do |category| %>
+	<tr>
+		<td><%= category.name %></td>
+		<td><%= link_to 'Editar', edit_category_path(category.id)%> | <%= link_to 'Borrar', category_path(category), method: :delete, data: {confirm: 'Seguro que deseas borrar la categoria: ' + category.name }%></td>
+	</tr>
+	<%end%>
+</table>

@@ -14,8 +14,8 @@
 <%end%>
 <% if params[:controller] == 'books' && params[:action] == 'index' || params[:action] == 'show' %>
 <ul class="list-group">
-  <li class="list-group-item">Ruby on rails</li>
-  <li class="list-group-item">PHP</li>
-  <li class="list-group-item">HTML</li>
+	<% @categories.each do |category| %>
+	<%= link_to category.name, category_path(category.id), class:'list-group-item' %>
+	<%end%>
 </ul>
 <%end%>

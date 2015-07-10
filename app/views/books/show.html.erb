@@ -1,27 +1,34 @@
 <div id="books-show">
 	<h2>
-		Ruby On Rails Power
+		<%= @book.title %>
 	</h2>
 	<div class="books-show-left">
-		<%= image_tag('covers/ruby_on_rails_power.jpg') %>
+		<%= image_tag(@book.coverpath) %>
 	</div>
 	<div class="book-show-right">
 		<h3>
-			book info:
+			Informaci&oacute;n del libro
 		</h3>
 		<ul>
-			<li><strong>Category: </strong>Ruby On Rails</li>
-			<li><strong>Author: </strong>Aneesha</li>
-			<li><strong>year: </strong>2007</li>
+			<li><strong>Categor&iacute;a: </strong><%= @book.category.name %></li>
+			<li><strong>Autor: </strong><%= @book.author.first_name + ' ' + @book.author.last_name %></li>
+			<li><strong>Editorial: </strong><%= @book.publisher.name %></li>
+			<li><strong>ISBN: </strong><%= @book.isbn %></li>
+			<li><strong>Año: </strong><%= @book.year %></li>
+			<li><strong>Formato: </strong><%= @book.format %></li>
+			<li><strong>P&aacute;ginas: </strong><%= @book.pages %></li>
 		</ul>
-		<%= link_to 'Compralo ya!', about_path , class:'btn btn-success', target:'_blank' %>
+		<%= link_to 'Compralo ya ! '+@book.price, @book.buy , class:'btn btn-success', target:'_blank' %>
 	</div>
-	<div class="clearfix">
-		<h4>
-			Excerpt
-		</h4>
-		<p>
-			
-		</p>
-	</div>
+	<div class="clearfix"></div>
+	<h4>
+		Substracto
+	</h4>
+	<p>
+		<%= @book.excerpt %>
+	</p>
+	<h3>
+		Funciones de administracion
+	</h3>
+	<%= link_to 'Edit', edit_book_path(@book.id) %> | <%= link_to 'Delete', book_path(@book), method: :delete, data: {confirm: 'estas seguro de querer borrar: '+ @book.title} %>
 </div>

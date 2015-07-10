@@ -1,34 +1,15 @@
 <div id="books-index">
-	<div class="row">
-		<div class="col-md-3 coll-sm-3">
-			<h3>
-				Ruby On Rails Power
-			</h3>
-			<%= image_tag('covers/ruby_on_rails_power.jpg') %>
-			<%= link_to 'Leer Mas', book_path(1), class:'btn btn-primary' %>
+	<% @books.each_slice(4) do |book| %>
+		<div class="row">
+			<% book.each do |book| %>
+			<div class="col-md-3 col-sm-3">
+				<h3>
+					<%= book.title %>
+				</h3>
+				<%= image_tag(book.coverpath) %>
+				<%= link_to 'Leer Mas', book_path(book), class:'btn btn-primary' %>
+			</div>
+			<%end%>
 		</div>
-		<div class="col-md-3 coll-sm-3">
-			
-		</div>
-		<div class="col-md-3 coll-sm-3">
-			
-		</div>
-		<div class="col-md-3 coll-sm-3">
-			
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-3 coll-sm-3">
-			
-		</div>
-		<div class="col-md-3 coll-sm-3">
-			
-		</div>
-		<div class="col-md-3 coll-sm-3">
-			
-		</div>
-		<div class="col-md-3 coll-sm-3">
-			
-		</div>
-	</div>
+	<%end%>
 </div>
